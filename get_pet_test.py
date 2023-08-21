@@ -1,5 +1,5 @@
-Сценарии для группы хендлеров "pet"
-POST для создания нового питомца:
+#Сценарии для группы хендлеров "pet"
+#POST для создания нового питомца:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -20,7 +20,7 @@ else:
 
 
 
-GET для получения информации о питомце:
+#GET для получения информации о питомце:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -37,7 +37,7 @@ else:
     print("Неожиданный статус-код:", response.status_code)
 
 
-DELETE для удаления питомца:
+#DELETE для удаления питомца:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -53,8 +53,8 @@ elif response.status_code == 404:
 else:
     print("Не удалось удалить питомца. Статус-код:", response.status_code)
 
-Сценарии для группы хендлеров "store"
-GET для получения информации о состоянии склада:
+#Сценарии для группы хендлеров "store"
+#GET для получения информации о состоянии склада:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -66,7 +66,7 @@ if response.status_code == 200:
 else:
     print("Не удалось получить информацию о складе. Статус-код:", response.status_code)
 
-POST для добавления нового заказа:
+#POST для добавления нового заказа:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -86,7 +86,7 @@ if response.status_code == 200:
     print("Заказ создан:", response.json())
 else:
     print("Не удалось создать заказ. Статус-код:", response.status_code)
-DELETE для удаления заказа:
+#DELETE для удаления заказа:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -103,8 +103,8 @@ else:
     print("Не удалось удалить заказ. Статус-код:", response.status_code)
 
 
-Сценарии для группы хендлеров "user"
-POST для создания нового пользователя:
+#Сценарии для группы хендлеров "user"
+#POST для создания нового пользователя:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -126,7 +126,7 @@ if response.status_code == 200:
 else:
     print("Не удалось создать пользователя. Статус-код:", response.status_code)
 
-GET для получения информации о пользователе:
+#GET для получения информации о пользователе:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
@@ -142,7 +142,7 @@ elif response.status_code == 404:
 else:
     print("Не удалось получить информацию о пользователе. Статус-код:", response.status_code)
 
-DELETE для удаления пользователя:
+#DELETE для удаления пользователя:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
