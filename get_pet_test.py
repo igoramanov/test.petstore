@@ -5,7 +5,7 @@ import requests
 base_url = 'https://petstore.swagger.io/v2'
 
 data = {
-    "id": 2112,
+    "id": "2112",
     "name": "dog1",
     "photoUrls": [],
     "status": "available"
@@ -25,7 +25,7 @@ import requests
 
 base_url = 'https://petstore.swagger.io/v2'
 
-pet_id = 2112
+pet_id = "2112"
 
 response = requests.get(f'{base_url}/pet/{pet_id}')
 
@@ -42,7 +42,7 @@ import requests
 
 base_url = 'https://petstore.swagger.io/v2'
 
-pet_id_to_delete = 2112
+pet_id_to_delete = "2112"
 
 response = requests.delete(f'{base_url}/pet/{pet_id_to_delete}')
 
