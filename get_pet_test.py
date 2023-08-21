@@ -54,6 +54,28 @@ else:
     print("Не удалось удалить питомца. Статус-код:", response.status_code)
 
 #Сценарии для группы хендлеров "store"
+
+#POST для добавления нового заказа:
+import requests
+
+base_url = 'https://petstore.swagger.io/v2'
+
+data = {
+    "id": "1200",
+    "petId": "2112",
+    "quantity": "1",
+    "shipDate": "2023-08-21T18:25:43.511Z",
+    "status": "placed",
+    "complete": False
+}
+
+response = requests.post(f'{base_url}/store/order', json=data)
+
+if response.status_code == 200:
+    print("Заказ создан:", response.json())
+else:
+    print("Не удалось создать заказ. Статус-код:", response.status_code)
+
 #GET для получения информации о состоянии склада:
 import requests
 
@@ -66,32 +88,12 @@ if response.status_code == 200:
 else:
     print("Не удалось получить информацию о складе. Статус-код:", response.status_code)
 
-#POST для добавления нового заказа:
-import requests
-
-base_url = 'https://petstore.swagger.io/v2'
-
-data = {
-    "id": 1200,
-    "petId": 2112,
-    "quantity": 1,
-    "shipDate": "2023-08-21T18:25:43.511Z",
-    "status": "placed",
-    "complete": False
-}
-
-response = requests.post(f'{base_url}/store/order', json=data)
-
-if response.status_code == 200:
-    print("Заказ создан:", response.json())
-else:
-    print("Не удалось создать заказ. Статус-код:", response.status_code)
 #DELETE для удаления заказа:
 import requests
 
 base_url = 'https://petstore.swagger.io/v2'
 
-order_id_to_delete = 1
+order_id_to_delete = "1200"
 
 response = requests.delete(f'{base_url}/store/order/{order_id_to_delete}')
 
@@ -110,7 +112,7 @@ import requests
 base_url = 'https://petstore.swagger.io/v2'
 
 data = {
-    "id": 2552,
+    "id": "2112",
     "username": "Igor",
     "firstName": "Igor",
     "lastName": "Amanov",
@@ -131,7 +133,7 @@ import requests
 
 base_url = 'https://petstore.swagger.io/v2'
 
-username = 'Igor’'
+username = 'Igor'
 
 response = requests.get(f'{base_url}/user/{username}')
 
@@ -147,7 +149,7 @@ import requests
 
 base_url = 'https://petstore.swagger.io/v2'
 
-username_to_delete = 'Igor’'
+username_to_delete = 'Igor'
 
 response = requests.delete(f'{base_url}/user/{username_to_delete}')
 
@@ -157,7 +159,6 @@ elif response.status_code == 404:
     print("Пользователь не найден")
 else:
     print("Не удалось удалить пользователя. Статус-код:", response.status_code)
-
 
 
 
