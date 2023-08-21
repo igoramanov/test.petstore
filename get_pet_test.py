@@ -1,6 +1,6 @@
 #Сценарии для группы хендлеров "pet"
 #POST для создания нового питомца:
-import requests
+import requests 
 
 base_url = 'https://petstore.swagger.io/v2'
 
